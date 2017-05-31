@@ -20,6 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
+### #one
+
+Awsrm::Resource#one identify uniquely one resource or raise error. this method not like ActiveRecord `find` .
+
+- identify `1` resource -> return resource
+- identify `0` resource -> raise error
+- identify `>1` resources -> raise error
+
 ```ruby
 require 'awspec'
 require 'awsrm'
@@ -29,6 +37,13 @@ describe route_table(Awsrm::RouteTable.one(name: 'my-route-table', vpc: 'my-vpc'
   it { should belong_to_vpc('my-vpc') }
 end
 ```
+
+### #all
+
+Awsrm::Resource#all return all resources.
+
+- identify `0` resource -> return empty array
+- identify `>1` resources -> return resources array
 
 ```ruby
 require 'awspec'
