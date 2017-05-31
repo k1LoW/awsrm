@@ -11,8 +11,8 @@ module Awsrm
         res = ec2_client.describe_route_tables(
           filters: filters(params)
         )
-        raise Awsrm::NoResourceError, "No resource route_table by #{params}" if res.route_tables.count == 0
-        raise Awsrm::DuplicatedResourceError, "Duplicated resource route_table by #{params}" if res.route_tables.count > 1
+        raise Awsrm::NoResourceError, "No resource #{name} by #{params}" if res.route_tables.count == 0
+        raise Awsrm::DuplicatedResourceError, "Duplicated resource #{name} by #{params}" if res.route_tables.count > 1
         RouteTableReader.new(res.route_tables.first)
       end
 

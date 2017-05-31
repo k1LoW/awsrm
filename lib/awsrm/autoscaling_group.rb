@@ -9,8 +9,8 @@ module Awsrm
         res = autoscaling_client.describe_auto_scaling_groups(
           auto_scaling_group_names: filters(params)
         )
-        raise Awsrm::NoResourceError, "No resource autoscaling_group by #{params}" if res.auto_scaling_groups.count == 0
-        raise Awsrm::DuplicatedResourceError, "Duplicated resource autoscaling_group by #{params}" if res.auto_scaling_groups.count > 1
+        raise Awsrm::NoResourceError, "No resource #{name} by #{params}" if res.auto_scaling_groups.count == 0
+        raise Awsrm::DuplicatedResourceError, "Duplicated resource #{name} by #{params}" if res.auto_scaling_groups.count > 1
         AutoscallingGroupReader.new(res.auto_scaling_groups.first)
       end
 
