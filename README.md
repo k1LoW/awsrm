@@ -1,6 +1,6 @@
 # [UNDER DEVELOPMENT] awsrm
 
-Simple AWS Resource Mapper for awspec.
+Simple AWS Resource "READONLY" Mapper for awspec.
 
 ## Installation
 

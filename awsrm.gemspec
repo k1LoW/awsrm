@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['k1LoW']
   spec.email         = ['k1lowxb@gmail.com']
 
-  spec.summary       = 'Simple AWS Resource Mapper for awspec.'
-  spec.description   = 'Simple AWS Resource Mapper for awspec.'
+  spec.summary       = 'Simple AWS Resource "READONLY" Mapper for awspec.'
+  spec.description   = 'Simple AWS Resource "READONLY" Mapper for awspec.'
   spec.homepage      = 'https://github.com/k1LoW/awsrm'
   spec.license       = 'MIT'
 
