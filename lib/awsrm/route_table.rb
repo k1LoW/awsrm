@@ -29,7 +29,7 @@ module Awsrm
 
   class RouteTableReader < Awsrm::ResourceReader
     def id
-      @struct.route_table_id
+      @resource.route_table_id
     end
   end
 end

@@ -69,7 +69,7 @@ module Awsrm
 
   class ResourceReader
     def initialize(resource)
-      @struct = resource
+      @resource = resource
     end
 
     def id

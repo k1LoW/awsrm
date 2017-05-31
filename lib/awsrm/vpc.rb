@@ -27,7 +27,7 @@ module Awsrm
 
   class VpcReader < Awsrm::ResourceReader
     def id
-      @struct.vpc_id
+      @resource.vpc_id
     end
   end
 end
