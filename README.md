@@ -1,4 +1,4 @@
-# [UNDER DEVELOPMENT] awsrm
+# [UNDER DEVELOPMENT] awsrm [![Gem](https://img.shields.io/gem/v/awsrm.svg)](https://rubygems.org/gems/awsrm) [![Travis](https://img.shields.io/travis/k1LoW/awsrm.svg)](https://travis-ci.org/k1LoW/awsrm) 
 
 Simple AWS Resource "READONLY" Mapper for awspec.
 
