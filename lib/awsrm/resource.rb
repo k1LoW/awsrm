@@ -57,10 +57,6 @@ module Awsrm
         end
       end
 
-      def name
-        self.class.to_s.split('::').last
-      end
-
       CLIENTS.each do |method_name, client|
         define_method method_name do
           client.new(CLIENT_OPTIONS)
