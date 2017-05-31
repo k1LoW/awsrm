@@ -63,9 +63,7 @@ module Awsrm
 
       CLIENTS.each do |method_name, client|
         define_method method_name do
-          unless self.methods.include? "@#{method_name}"
-            instance_variable_set("@#{method_name}", client.new(CLIENT_OPTIONS))
-          end
+          client.new(CLIENT_OPTIONS)
         end
       end
     end
