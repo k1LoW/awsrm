@@ -20,9 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-### #one
+### ::one
 
-Awsrm::Resource#one identify uniquely one resource or raise error. this method not like ActiveRecord `find` .
+`Awsrm::Resource::one` identify uniquely one resource or raise error. this method not like ActiveRecord `find` .
 
 - identify `1` resource -> return resource
 - identify `0` resource -> raise error
@@ -38,9 +38,9 @@ describe route_table(Awsrm::RouteTable.one(name: 'my-route-table', vpc: 'my-vpc'
 end
 ```
 
-### #all
+### ::all
 
-Awsrm::Resource#all return all resources.
+`Awsrm::Resource::all` return all resources.
 
 - identify `0` resource -> return empty array
 - identify `>1` resources -> return resources array
