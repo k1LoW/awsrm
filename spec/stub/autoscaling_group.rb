@@ -70,7 +70,7 @@ Aws.config[:autoscaling] = {
           resource_type: 'auto-scaling-group',
           value: 'WebServer'
         }
-      ],
+      ]
     }
   }
 }

@@ -11,7 +11,9 @@ RSpec.describe Awsrm::AutoscallingGroup do
 
   it '#filters' do
     expect(Awsrm::AutoscallingGroup.filters(name: 'my-auto-scaling-group')).to eq ['my-auto-scaling-group']
-    expect(Awsrm::AutoscallingGroup.filters(tags: { Dept: 'Research', Role: 'WebServer' })).to eq ['my-auto-scaling-group']
-    expect(Awsrm::AutoscallingGroup.filters(tags: { Dept: 'Research', Invalid: 'Value' })).to eq []
+    expect(Awsrm::AutoscallingGroup.filters(
+             tags: { Dept: 'Research', Role: 'WebServer' })).to eq ['my-auto-scaling-group']
+    expect(Awsrm::AutoscallingGroup.filters(
+             tags: { Dept: 'Research', Invalid: 'Value' })).to eq []
   end
 end

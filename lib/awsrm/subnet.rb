@@ -12,9 +12,7 @@ module Awsrm
         res = ec2_client.describe_subnets(
           filters: filters(params)
         )
-        raise Awsrm::NoResourceError, "No resource #{name} by #{params}" if res.subnets.count == 0
-        raise Awsrm::DuplicatedResourceError, "Duplicated resource #{name} by #{params}" if res.subnets.count > 1
-        SubnetReader.new(res.subnets.first)
+        SubnetReader.new(res.subnets.first) if check_one(res.subnets)
       end
 
       def all(params)

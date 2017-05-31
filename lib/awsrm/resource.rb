@@ -57,6 +57,12 @@ module Awsrm
         end
       end
 
+      def check_one(resources)
+        raise Awsrm::NoResourceError, "No resource #{name} by #{params}" if resources.count == 0
+        raise Awsrm::DuplicatedResourceError, "Duplicated resource #{name} by #{params}" if resources.count > 1
+        true
+      end
+
       CLIENTS.each do |method_name, client|
         define_method method_name do
           client.new(CLIENT_OPTIONS)

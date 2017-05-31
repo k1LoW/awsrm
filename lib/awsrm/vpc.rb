@@ -9,9 +9,7 @@ module Awsrm
         res = ec2_client.describe_vpcs(
           filters: filters(params)
         )
-        raise Awsrm::NoResourceError, "No resource route_table by #{params}" if res.vpcs.count == 0
-        raise Awsrm::DuplicatedResourceError, "Duplicated resource route_table by #{params}" if res.vpcs.count > 1
-        VpcReader.new(res.vpcs.first)
+        VpcReader.new(res.vpcs.first) if check_one(res.vpcs)
       end
 
       def all(params)
