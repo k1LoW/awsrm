@@ -14,4 +14,8 @@ RSpec.describe Awsrm::Ec2 do
     expect(Awsrm::Ec2.filters(vpc_id: 'vpc-ab123cde')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
     expect(Awsrm::Ec2.filters(vpc: 'my-vpc')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
   end
+
+  it '#one().* access Aws::EC2::Types::Instance' do
+    expect(Awsrm::Ec2.one(name: 'my-ec2').state.name).to eq 'running'
+  end
 end

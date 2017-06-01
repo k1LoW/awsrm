@@ -14,4 +14,8 @@ RSpec.describe Awsrm::RouteTable do
     expect(Awsrm::RouteTable.filters(vpc_id: 'vpc-ab123cde')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
     expect(Awsrm::RouteTable.filters(vpc: 'my-vpc')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
   end
+
+  it '#one().* access Aws::EC2::Types::RouteTable' do
+    expect(Awsrm::RouteTable.one(name: 'my-route-table').routes.count).to eq 6
+  end
 end

@@ -16,4 +16,8 @@ RSpec.describe Awsrm::AutoscallingGroup do
     expect(Awsrm::AutoscallingGroup.filters(
              tags: { Dept: 'Research', Invalid: 'Value' })).to eq []
   end
+
+  it '#one().* access Aws::AutoScaling::Types::AutoScalingGroup' do
+    expect(Awsrm::AutoscallingGroup.one(name: 'my-auto-scaling-group').health_check_type).to eq 'EC2'
+  end
 end
