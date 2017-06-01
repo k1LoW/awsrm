@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'awsrm'
+require 'awsrm/toolbox'
+require 'awsrm/generator/doc/resource'
+require 'active_support/inflector'
+
+Awsrm::Toolbox.start

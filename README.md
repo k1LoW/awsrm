@@ -57,6 +57,10 @@ Awsrm::RouteTable.all(vpc: 'my-vpc').each do | route |
 end
 ```
 
+## Support AWS Resources
+
+[Resources](doc/resources.md)
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
