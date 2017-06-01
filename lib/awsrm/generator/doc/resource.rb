@@ -9,7 +9,7 @@ module Awsrm
               File.basename(file, '.rb')
             end
             links = resources.sort.map do |r|
-              '[Awsrm::' + r.classify + '](#' + r + ')'
+              '[' + r.classify + '](#' + r + ')'
             end
             header = <<-'EOF'
 # Resources

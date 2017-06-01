@@ -1,10 +1,10 @@
 # Resources
 
-[Awsrm::AutoscalingGroup](#autoscaling_group)
-| [Awsrm::Ec2](#ec2)
-| [Awsrm::RouteTable](#route_table)
-| [Awsrm::Subnet](#subnet)
-| [Awsrm::Vpc](#vpc)
+[AutoscalingGroup](#autoscaling_group)
+| [Ec2](#ec2)
+| [RouteTable](#route_table)
+| [Subnet](#subnet)
+| [Vpc](#vpc)
 
 ## <a name="autoscaling_group">Awsrm::AutoscalingGroup</a>
 
