@@ -5,18 +5,11 @@ module Awsrm
     }.freeze
 
     class << self
-      def one(params)
-        res = ec2_client.describe_vpcs(
-          filters: filters(params)
-        )
-        VpcReader.new(res.vpcs.first) if check_one(res.vpcs)
-      end
-
       def all(params)
         res = ec2_client.describe_vpcs(
           filters: filters(params)
         )
-        res.vpc.map do |route|
+        res.vpcs.map do |route|
           VpcReader.new(route)
         end
       end

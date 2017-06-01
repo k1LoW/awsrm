@@ -5,13 +5,6 @@ module Awsrm
       tags: ->(value) { AutoscallingGroup.tags2names(value) }
     }.freeze
     class << self
-      def one(params)
-        res = autoscaling_client.describe_auto_scaling_groups(
-          auto_scaling_group_names: filters(params)
-        )
-        AutoscallingGroupReader.new(res.auto_scaling_groups.first) if check_one(res.auto_scaling_groups)
-      end
-
       def all(params)
         res = autoscaling_client.describe_auto_scaling_groups(
           auto_scaling_group_names: filters(params)

@@ -8,13 +8,6 @@ module Awsrm
     }.freeze
 
     class << self
-      def one(params)
-        res = ec2_client.describe_subnets(
-          filters: filters(params)
-        )
-        SubnetReader.new(res.subnets.first) if check_one(res.subnets)
-      end
-
       def all(params)
         res = ec2_client.describe_subnets(
           filters: filters(params)

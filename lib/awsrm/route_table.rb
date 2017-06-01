@@ -7,13 +7,6 @@ module Awsrm
     }.freeze
 
     class << self
-      def one(params)
-        res = ec2_client.describe_route_tables(
-          filters: filters(params)
-        )
-        RouteTableReader.new(res.route_tables.first) if check_one(res.route_tables)
-      end
-
       def all(params)
         res = ec2_client.describe_route_tables(
           filters: filters(params)

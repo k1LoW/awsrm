@@ -41,8 +41,9 @@ module Awsrm
         http_proxy: ENV['http_proxy'] || ENV['https_proxy'] || nil
       }.freeze
 
-      def one(_params)
-        raise 'not implemented'
+      def one(params)
+        res = all(params)
+        res.first if check_one(res)
       end
 
       def all(_params)
