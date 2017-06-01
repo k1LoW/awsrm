@@ -88,5 +88,9 @@ module Awsrm
     def method_missing(key)
       @resource.send(key)
     end
+
+    def respond_to?(key)
+      @resource.respond_to?(key) || super
+    end
   end
 end
