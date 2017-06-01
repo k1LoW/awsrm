@@ -12,8 +12,8 @@
 
 | key | replaced filter |
 | - | - |
-| name | `[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/autoscaling_group.rb)` |
-| tags | `[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/autoscaling_group.rb)` |
+| name | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/autoscaling_group.rb) |
+| tags | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/autoscaling_group.rb) |
 
 
 ## <a name="ec2">Awsrm::Ec2</a>
@@ -24,7 +24,7 @@
 | - | - |
 | name | `tag:Name` |
 | vpc_id | `vpc-id` |
-| vpc | `[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb)` |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
 
 
 ## <a name="route_table">Awsrm::RouteTable</a>
@@ -35,7 +35,7 @@
 | - | - |
 | name | `tag:Name` |
 | vpc_id | `vpc-id` |
-| vpc | `[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/route_table.rb)` |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/route_table.rb) |
 
 
 ## <a name="subnet">Awsrm::Subnet</a>
@@ -47,7 +47,7 @@
 | name | `tag:Name` |
 | cidr | `cidrBlock` |
 | vpc_id | `vpc-id` |
-| vpc | `[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/subnet.rb)` |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/subnet.rb) |
 
 
 ## <a name="vpc">Awsrm::Vpc</a>

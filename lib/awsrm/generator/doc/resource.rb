@@ -33,7 +33,7 @@ EOF
 
 | key | replaced filter |
 | - | - |
-<% filter_map.each do |k, v| %>| <%= k %> | `<%= v.is_a?(Proc) ? '[#<Proc>](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/' + r + '.rb)' : v %>` |
+<% filter_map.each do |k, v| %>| <%= k %> | <%= v.is_a?(Proc) ? '[`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/' + r + '.rb)' : '`' + v + '`' %> |
 <% end %>
 
 EOF
