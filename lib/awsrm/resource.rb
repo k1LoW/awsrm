@@ -84,5 +84,9 @@ module Awsrm
     def arn
       raise 'not implemented'
     end
+
+    def method_missing(key)
+      @resource.send(key)
+    end
   end
 end
