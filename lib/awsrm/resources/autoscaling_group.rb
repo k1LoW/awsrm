@@ -1,8 +1,8 @@
 module Awsrm
-  class AutoscallingGroup < Awsrm::Resource
+  class AutoscalingGroup < Awsrm::Resource
     FILTER_MAP = {
       name: ->(value) { [value] },
-      tags: ->(value) { AutoscallingGroup.tags2names(value) }
+      tags: ->(value) { AutoscalingGroup.tags2names(value) }
     }.freeze
     class << self
       def all(params)
@@ -10,7 +10,7 @@ module Awsrm
           auto_scaling_group_names: filters(params)
         )
         res.auto_scaling_groups.map do |as|
-          AutoscallingGroupReader.new(as)
+          AutoscalingGroupReader.new(as)
         end
       end
 
@@ -34,7 +34,7 @@ module Awsrm
       end
     end
 
-    class AutoscallingGroupReader < Awsrm::ResourceReader
+    class AutoscalingGroupReader < Awsrm::ResourceReader
       def id
         @resource.auto_scaling_group_name
       end

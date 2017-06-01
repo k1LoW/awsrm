@@ -31,4 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.47.0'
   spec.add_development_dependency 'octorelease'
   spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'thor'
+  spec.add_development_dependency 'activesupport'
 end
