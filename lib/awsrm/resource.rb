@@ -89,7 +89,7 @@ module Awsrm
       @resource.send(key)
     end
 
-    def respond_to?(key)
+    def respond_to?(key, *args)
       @resource.respond_to?(key) || super
     end
   end
