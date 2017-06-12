@@ -8,7 +8,8 @@ module Awsrm
             resources = Dir.glob(resource_dir + '*').map do |file|
               File.basename(file, '.rb')
             end
-            links = resources.sort.map do |r|
+            resources.sort!
+            links = resources.map do |r|
               '[' + r.classify + '](#' + r + ')'
             end
             header = <<-'EOF'
