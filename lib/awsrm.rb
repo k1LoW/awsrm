@@ -5,6 +5,7 @@ require 'awsrm/resources/ec2'
 require 'awsrm/resources/route_table'
 require 'awsrm/resources/subnet'
 require 'awsrm/resources/vpc'
+require 'awsrm/resources/vpn_connection'
 require 'awsrm/version'
 
 module Awsrm
