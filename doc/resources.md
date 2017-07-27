@@ -5,6 +5,7 @@
 | [RouteTable](#route_table)
 | [Subnet](#subnet)
 | [Vpc](#vpc)
+| [VpnConnection](#vpn_connection)
 
 ## <a name="autoscaling_group">Awsrm::AutoscalingGroup</a>
 
@@ -51,6 +52,15 @@
 
 
 ## <a name="vpc">Awsrm::Vpc</a>
+
+### Filter
+
+| key | replaced filter |
+| - | - |
+| name | `tag:Name` |
+
+
+## <a name="vpn_connection">Awsrm::VpnConnection</a>
 
 ### Filter
 
