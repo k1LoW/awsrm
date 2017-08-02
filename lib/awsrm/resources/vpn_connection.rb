@@ -1,6 +1,8 @@
 module Awsrm
   class VpnConnection < Awsrm::Resource
     FILTER_MAP = {
+      id: 'vpn-connection-id',
+      vpn_connection_id: 'vpn-connection-id',
       name: 'tag:Name'
     }.freeze
 

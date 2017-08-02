@@ -1,6 +1,8 @@
 module Awsrm
   class Vpc < Awsrm::Resource
     FILTER_MAP = {
+      id: 'vpc-id',
+      vpc_id: 'vpc-id',
       name: 'tag:Name'
     }.freeze
 

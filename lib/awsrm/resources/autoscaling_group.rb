@@ -1,6 +1,8 @@
 module Awsrm
   class AutoscalingGroup < Awsrm::Resource
     FILTER_MAP = {
+      id: ->(value) { [value] },
+      arn: ->(value) { [value.split('/').last] },
       name: ->(value) { [value] },
       tags: ->(value) { AutoscalingGroup.tags2names(value) }
     }.freeze

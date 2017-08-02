@@ -10,6 +10,8 @@ RSpec.describe Awsrm::RouteTable do
   end
 
   it '#filters' do
+    expect(Awsrm::RouteTable.filters(id: 'rtb-a12bcd34')).to eq [{ name: 'route-table-id', values: ['rtb-a12bcd34'] }]
+    expect(Awsrm::RouteTable.filters(route_table_id: 'rtb-a12bcd34')).to eq [{ name: 'route-table-id', values: ['rtb-a12bcd34'] }]
     expect(Awsrm::RouteTable.filters(name: 'my-route-table')).to eq [{ name: 'tag:Name', values: ['my-route-table'] }]
     expect(Awsrm::RouteTable.filters(vpc_id: 'vpc-ab123cde')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
     expect(Awsrm::RouteTable.filters(vpc: 'my-vpc')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
