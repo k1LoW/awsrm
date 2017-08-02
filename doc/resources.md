@@ -44,6 +44,7 @@
 | id | `target_group_name` |
 | arn | `target_group_arn` |
 | name | `target_group_name` |
+| alb | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/alb_target_group.rb) |
 | vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/alb_target_group.rb) |
 
 
