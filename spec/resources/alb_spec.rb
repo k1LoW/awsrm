@@ -13,6 +13,7 @@ RSpec.describe Awsrm::Alb do
     # rubocop:enable Metrics/LineLength
     expect(Awsrm::Alb.one(dns_name: 'internal-my-elb-1551266724.ap-northeast-1.elb.amazonaws.com').id).to eq 'my-alb'
     expect(Awsrm::Alb.one(tags: { Dept: 'Research', Role: 'WebServer' }).id).to eq 'my-alb'
+    expect(Awsrm::Alb.one(vpc: 'my-vpc').id).to eq 'my-alb'
   end
 
   it '#one().* access Aws::ElasticLoadBalancingV2::Types::LoadBalancer' do

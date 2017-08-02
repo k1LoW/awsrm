@@ -5,7 +5,8 @@ module Awsrm
       arn: 'load_balancer_arn',
       name: 'load_balancer_name',
       dns_name: 'dns_name',
-      tags: ->(lb, value) { Alb.has_tags?(lb.load_balancer_arn, value) }
+      tags: ->(lb, value) { Alb.has_tags?(lb.load_balancer_arn, value) },
+      vpc: ->(lb, value) { lb.vpc_id == Awsrm::Vpc.one(name: value).id }
     }.freeze
 
     class << self
