@@ -4,6 +4,7 @@ module Awsrm
       id: 'target_group_name',
       arn: 'target_group_arn',
       name: 'target_group_name',
+      alb: ->(target, value) { target.load_balancer_arns.include?(Awsrm::Alb.one(name: value).load_balancer_arn) },
       vpc: ->(target, value) { target.vpc_id == Awsrm::Vpc.one(name: value).id }
     }.freeze
 
