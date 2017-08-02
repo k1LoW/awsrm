@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Awsrm::Alb do
   before(:each) do
-    Awspec::Stub.load 'alb'
+    require 'stub/alb'
   end
 
   it '#one().id' do
@@ -12,6 +12,7 @@ RSpec.describe Awsrm::Alb do
     expect(Awsrm::Alb.one(arn: 'arn:aws:elasticloadbalancing:ap-northeast-1:1234567890:loadbalancer/app/my-alb/1aa1bb1cc1ddee11').id).to eq 'my-alb'
     # rubocop:enable Metrics/LineLength
     expect(Awsrm::Alb.one(dns_name: 'internal-my-elb-1551266724.ap-northeast-1.elb.amazonaws.com').id).to eq 'my-alb'
+    expect(Awsrm::Alb.one(tags: { Dept: 'Research', Role: 'WebServer' }).id).to eq 'my-alb'
   end
 
   it '#one().* access Aws::ElasticLoadBalancingV2::Types::LoadBalancer' do

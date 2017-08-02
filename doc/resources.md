@@ -18,6 +18,7 @@
 | arn | `load_balancer_arn` |
 | name | `load_balancer_name` |
 | dns_name | `dns_name` |
+| tags | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/alb.rb) |
 
 
 ## <a name="autoscaling_group">Awsrm::AutoscalingGroup</a>
