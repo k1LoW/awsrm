@@ -5,7 +5,7 @@ module Awsrm
       arn: 'load_balancer_arn',
       name: 'load_balancer_name',
       dns_name: 'dns_name',
-      tags: ->(arn, value) { Alb.has_tags?(arn, value) }
+      tags: ->(lb, value) { Alb.has_tags?(lb.load_balancer_arn, value) }
     }.freeze
 
     class << self
@@ -16,7 +16,7 @@ module Awsrm
         lbs.map do |lb|
           ret = params.all? do |key, value|
             raise UndefinedFilterParamError, key unless self::FILTER_MAP.key?(key)
-            next self::FILTER_MAP[key].call(lb.load_balancer_arn, value) if self::FILTER_MAP[key].is_a?(Proc)
+            next self::FILTER_MAP[key].call(lb, value) if self::FILTER_MAP[key].is_a?(Proc)
             lb[self::FILTER_MAP[key]] == value
           end
           AlbReader.new(lb) if ret
