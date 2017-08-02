@@ -1,6 +1,8 @@
 module Awsrm
   class RouteTable < Awsrm::Resource
     FILTER_MAP = {
+      id: 'route-table-id',
+      route_table_id: 'route-table-id',
       name: 'tag:Name',
       vpc_id: 'vpc-id',
       vpc: ->(value) { { name: 'vpc-id', values: [Awsrm::Vpc.one(name: value).id] } }

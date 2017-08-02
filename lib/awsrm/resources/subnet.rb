@@ -1,6 +1,8 @@
 module Awsrm
   class Subnet < Awsrm::Resource
     FILTER_MAP = {
+      id: 'subnet-id',
+      subnet_id: 'subnet-id',
       name: 'tag:Name',
       cidr: 'cidrBlock',
       vpc_id: 'vpc-id',

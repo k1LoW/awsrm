@@ -1,6 +1,8 @@
 module Awsrm
   class Ec2 < Awsrm::Resource
     FILTER_MAP = {
+      id: 'instance-id',
+      instance_id: 'instance-id',
       name: 'tag:Name',
       vpc_id: 'vpc-id',
       vpc: ->(value) { { name: 'vpc-id', values: [Awsrm::Vpc.one(name: value).id] } }
