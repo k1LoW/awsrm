@@ -21,6 +21,7 @@
 | name | `load_balancer_name` |
 | dns_name | `dns_name` |
 | tags | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/alb.rb) |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/alb.rb) |
 
 
 ## <a name="alb_listener">Awsrm::AlbListener</a>
