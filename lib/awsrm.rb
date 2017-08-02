@@ -1,5 +1,6 @@
 require 'awsrm/error'
 require 'awsrm/resource'
+require 'awsrm/resources/alb'
 require 'awsrm/resources/autoscaling_group'
 require 'awsrm/resources/ec2'
 require 'awsrm/resources/route_table'
