@@ -31,5 +31,13 @@ module Awsrm
     def id
       @resource.target_group_name
     end
+
+    def instance_ids
+      Awsrm::Resource.elbv2_client.describe_target_health(
+        target_group_arn: @resource.target_group_arn
+      ).target_health_descriptions.map do |desc|
+        desc.target.id
+      end
+    end
   end
 end
