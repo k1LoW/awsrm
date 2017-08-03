@@ -5,7 +5,11 @@ module Awsrm
       instance_id: 'instance-id',
       name: 'tag:Name',
       vpc_id: 'vpc-id',
-      vpc: ->(value) { { name: 'vpc-id', values: [Awsrm::Vpc.one(name: value).id] } }
+      vpc: ->(value) { { name: 'vpc-id', values: [Awsrm::Vpc.one(name: value).id] } },
+      alb_target_group: ->(value) do
+        { name: 'instance-id',
+          values: Awsrm::AlbTargetGroup.one(name: value).instance_ids }
+      end
     }.freeze
 
     class << self
