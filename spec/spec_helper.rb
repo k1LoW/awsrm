@@ -1,9 +1,9 @@
 require 'pp'
 require 'bundler/setup'
+require 'dry/inflector'
 require 'awspec'
 require 'awsrm'
 require 'awsrm/generator/doc/resource'
-require 'active_support/inflector'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
