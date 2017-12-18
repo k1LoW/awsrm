@@ -14,7 +14,10 @@ module Awsrm
         lbs = elbv2_client.describe_load_balancers.map do |responce|
           responce.load_balancers
         end.flatten
-        lbs.map do |lb|
+        albs = lbs.select do |lb|
+          lb.type == 'application'
+        end
+        albs.map do |lb|
           ret = params.all? do |key, value|
             raise UndefinedFilterParamError, key unless self::FILTER_MAP.key?(key)
             next self::FILTER_MAP[key].call(lb, value) if self::FILTER_MAP[key].is_a?(Proc)
