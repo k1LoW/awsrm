@@ -23,7 +23,9 @@ module Awsrm
         end.compact
       end
 
-      def filters(params) end
+      def filters(_params)
+        raise NoMethodError
+      end
     end
   end
 

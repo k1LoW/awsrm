@@ -16,6 +16,10 @@ RSpec.describe Awsrm::Alb do
     expect(Awsrm::Alb.one(vpc: 'my-vpc').id).to eq 'my-alb'
   end
 
+  it '#filters' do
+    expect { Awsrm::Alb.filters({ id: 'my-alb' }) }.to raise_error(NoMethodError)
+  end
+
   it '#one().* access Aws::ElasticLoadBalancingV2::Types::LoadBalancer' do
     expect(Awsrm::Alb.one(name: 'my-alb').dns_name).to eq 'internal-my-elb-1551266724.ap-northeast-1.elb.amazonaws.com'
   end

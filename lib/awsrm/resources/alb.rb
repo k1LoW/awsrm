@@ -27,7 +27,9 @@ module Awsrm
         end.compact
       end
 
-      def filters(params) end
+      def filters(_params)
+        raise NoMethodError
+      end
 
       def has_tags?(arn, tag_hash)
         tag_descriptions = elbv2_client.describe_tags(resource_arns: [arn]).tag_descriptions.flatten
