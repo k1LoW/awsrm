@@ -6,6 +6,10 @@ module Awsrm
       name: 'tag:Name',
       vpc_id: 'vpc-id',
       vpc: ->(value) { { name: 'vpc-id', values: [Awsrm::Vpc.one(name: value).id] } },
+      elb: ->(value) do
+        { name: 'instance-id',
+          values: Awsrm::Elb.one(name: value).instances.map { |i| i.instance_id } }
+      end,
       alb_target_group: ->(value) do
         { name: 'instance-id',
           values: Awsrm::AlbTargetGroup.one(name: value).instance_ids }
