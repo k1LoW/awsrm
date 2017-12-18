@@ -15,6 +15,8 @@ RSpec.describe Awsrm::Ec2 do
     expect(Awsrm::Ec2.filters(name: 'my-ec2')).to eq [{ name: 'tag:Name', values: ['my-ec2'] }]
     expect(Awsrm::Ec2.filters(vpc_id: 'vpc-ab123cde')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
     expect(Awsrm::Ec2.filters(vpc: 'my-vpc')).to eq [{ name: 'vpc-id', values: ['vpc-ab123cde'] }]
+    expect(Awsrm::Ec2.filters(elb: 'my-elb')).to eq [{ name: 'instance-id',
+                                                       values: ['i-ec12345a', 'i-ec789dsa'] }]
     expect(Awsrm::Ec2.filters(alb_target_group: 'my-alb-target-group')).to eq [{ name: 'instance-id',
                                                                                  values: ['i-0f76fade', 'i-ec12345a'] }]
   end

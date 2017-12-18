@@ -72,6 +72,7 @@
 | name | `tag:Name` |
 | vpc_id | `vpc-id` |
 | vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
+| elb | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
 | alb_target_group | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
 
 
