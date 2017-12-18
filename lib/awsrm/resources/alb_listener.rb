@@ -24,7 +24,9 @@ module Awsrm
         end
       end
 
-      def filters(params) end
+      def filters(_params)
+        raise NoMethodError
+      end
     end
   end
 
