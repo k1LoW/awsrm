@@ -5,6 +5,7 @@
 | [AlbTargetGroup](#alb_target_group)
 | [AutoscalingGroup](#autoscaling_group)
 | [Ec2](#ec2)
+| [Elb](#elb)
 | [RouteTable](#route_table)
 | [Subnet](#subnet)
 | [Vpc](#vpc)
@@ -72,6 +73,19 @@
 | vpc_id | `vpc-id` |
 | vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
 | alb_target_group | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/ec2.rb) |
+
+
+## <a name="elb">Awsrm::Elb</a>
+
+### Filter
+
+| key | replaced filter |
+| - | - |
+| id | `load_balancer_name` |
+| name | `load_balancer_name` |
+| dns_name | `dns_name` |
+| tags | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/elb.rb) |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/elb.rb) |
 
 
 ## <a name="route_table">Awsrm::RouteTable</a>
