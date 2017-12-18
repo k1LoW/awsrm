@@ -43,7 +43,7 @@ module Awsrm
 
       def one(params)
         res = all(params)
-        res.first if check_one(res)
+        res.first if check_one(res, params)
       end
 
       def all(_params)
@@ -58,7 +58,7 @@ module Awsrm
         end
       end
 
-      def check_one(resources)
+      def check_one(resources, params)
         raise Awsrm::NoResourceError, "No resource #{name} by #{params}" if resources.count == 0
         raise Awsrm::DuplicatedResourceError, "Duplicated resource #{name} by #{params}" if resources.count > 1
         true
