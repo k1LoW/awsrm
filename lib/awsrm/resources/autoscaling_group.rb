@@ -24,7 +24,7 @@ module Awsrm
       end
 
       def tags2names(tag_hash)
-        tags = autoscaling_client.describe_tags.tags.flatten
+        tags = autoscaling_client.describe_tags.flat_map { |page| page.tags }
         maps = tag_hash.map do |key, value|
           tags.map do |tag|
             tag.resource_id if tag.key == key.to_s && tag.value == value.to_s
