@@ -134,6 +134,20 @@ Aws.config[:ec2] = {
         }
       ]
     },
+    describe_network_acls: {
+      network_acls: [
+        {
+          network_acl_id: 'acl-1abc2d3e',
+          vpc_id: 'vpc-ab123cde',
+          tags: [
+            {
+              key: 'Name',
+              value: 'my-network-acl'
+            }
+          ]
+        }
+      ]
+    },
     describe_volumes: {
       volumes: [
         {
