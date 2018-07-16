@@ -8,6 +8,7 @@
 | [Elb](#elb)
 | [NetworkAcl](#network_acl)
 | [RouteTable](#route_table)
+| [SecurityGroup](#security_group)
 | [Subnet](#subnet)
 | [Vpc](#vpc)
 | [VpnConnection](#vpn_connection)
@@ -113,6 +114,19 @@
 | name | `tag:Name` |
 | vpc_id | `vpc-id` |
 | vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/route_table.rb) |
+
+
+## <a name="security_group">Awsrm::SecurityGroup</a>
+
+### Filter
+
+| key | replaced filter |
+| - | - |
+| id | `group-id` |
+| name | `tag:Name` |
+| cidr | `cidrBlock` |
+| vpc_id | `vpc-id` |
+| vpc | [`#<Proc>`](https://github.com/k1LoW/awsrm/blob/master/lib/awsrm/resources/security_group.rb) |
 
 
 ## <a name="subnet">Awsrm::Subnet</a>

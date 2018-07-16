@@ -125,6 +125,7 @@ Aws.config[:ec2] = {
         {
           group_id: 'sg-1a2b3cd4',
           group_name: 'my-security-group-name',
+          vpc_id: 'vpc-ab123cde',
           tags: [
             {
               key: 'Name',
